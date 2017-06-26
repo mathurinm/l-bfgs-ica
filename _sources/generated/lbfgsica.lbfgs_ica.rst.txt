@@ -1,0 +1,6 @@
+lbfgsica.lbfgs_ica
+==================
+
+.. currentmodule:: lbfgsica
+
+.. autofunction:: lbfgs_ica
