@@ -1,7 +1,6 @@
 
 <!DOCTYPE html>
 
-
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -27,7 +26,7 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
     <script type="text/javascript" src="../_static/bootstrap-3.3.6/js/bootstrap.min.js"></script>
@@ -40,7 +39,7 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 
   </head>
-  <body role="document">
+  <body>
 
   <div id="navbar" class="navbar navbar-default navbar-fixed-top">
     <div class="container">
@@ -123,16 +122,19 @@
 <dl class="function">
 <dt id="lbfgsica.lbfgs_ica">
 <code class="descclassname">lbfgsica.</code><code class="descname">lbfgs_ica</code><span class="sig-paren">(</span><em>X</em>, <em>m=7</em>, <em>maxiter=100</em>, <em>precon=1</em>, <em>tol=1e-07</em>, <em>lambda_min=0.01</em>, <em>ls_tries=5</em>, <em>verbose=False</em><span class="sig-paren">)</span><a class="headerlink" href="#lbfgsica.lbfgs_ica" title="Permalink to this definition">¶</a></dt>
-<dd><p>Runs the L-BFGS ICA algorithm as described in &#8220;Faster ICA by
-preconditioning with Hessian approximations&#8221;</p>
-<p>Parameters:</p>
-<blockquote>
-<div><dl class="docutils">
-<dt>X <span class="classifier-delimiter">:</span> <span class="classifier">(N, T) numpy array</span></dt>
+<dd><p>Runs L-BFGS ICA algorithm using preconditioning</p>
+<p>The algorithm is detailed in:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Pierre</span> <span class="n">Ablin</span><span class="p">,</span> <span class="n">Jean</span><span class="o">-</span><span class="n">Francois</span> <span class="n">Cardoso</span><span class="p">,</span> <span class="ow">and</span> <span class="n">Alexandre</span> <span class="n">Gramfort</span>
+<span class="n">Faster</span> <span class="n">ICA</span> <span class="n">by</span> <span class="n">preconditioning</span> <span class="k">with</span> <span class="n">Hessian</span> <span class="n">approximations</span>
+<span class="n">ArXiv</span> <span class="n">Preprint</span><span class="p">,</span> <span class="n">June</span> <span class="mi">2017</span>
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>X <span class="classifier-delimiter">:</span> <span class="classifier">array, shape (N, T)</span></dt>
 <dd>Matrix containing the signals that have to be unmixed. N is the
 number of signals, T is the number of samples. X has to be centered</dd>
 <dt>m <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd>Size of L-BFGS&#8217;s memory. Typical values for m are in the range 3-15</dd>
+<dd>Size of L-BFGS’s memory. Typical values for m are in the range 3-15</dd>
 <dt>maxiter <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
 <dd>Maximal number of iterations for the algorithm</dd>
 <dt>precon <span class="classifier-delimiter">:</span> <span class="classifier">1 or 2</span></dt>
@@ -155,16 +157,11 @@ is used instead.</dd>
 <dt>verbose <span class="classifier-delimiter">:</span> <span class="classifier">boolean</span></dt>
 <dd>If true, prints the informations about the algorithm.</dd>
 </dl>
-</div></blockquote>
 <dl class="docutils">
-<dt>Returns:</dt>
-<dd><dl class="first last docutils">
-<dt>Y <span class="classifier-delimiter">:</span> <span class="classifier">(N, T) numpy array</span></dt>
+<dt>Y <span class="classifier-delimiter">:</span> <span class="classifier">array, shape (N, T)</span></dt>
 <dd>The estimated source matrix</dd>
-<dt>W <span class="classifier-delimiter">:</span> <span class="classifier">(N, N) numpy array</span></dt>
+<dt>W <span class="classifier-delimiter">:</span> <span class="classifier">array, shape (N, N)</span></dt>
 <dd>The estimated unmixing matrix, such that Y = WX.</dd>
-</dl>
-</dd>
 </dl>
 </dd></dl>
 
@@ -186,7 +183,7 @@ data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_orange_
     </p>
     <p>
         &copy; Copyright 2017, Pierre Ablin.<br/>
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.2.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.2.<br/>
     </p>
   </div>
 </footer>

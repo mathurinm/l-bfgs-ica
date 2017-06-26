@@ -1,5 +1,5 @@
-lbfgsica.lbfgs_ica
-==================
+lbfgsica\.lbfgs\_ica
+====================
 
 .. currentmodule:: lbfgsica
 
