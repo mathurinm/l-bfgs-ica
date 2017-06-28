@@ -130,7 +130,7 @@
   
   <div class="section" id="l-bfgs-ica">
 <h1>L-BFGS ICA<a class="headerlink" href="#l-bfgs-ica" title="Permalink to this headline">¶</a></h1>
-<p>This is a library to run a faster ICA solver based on L-BFGS combined a preconditioning strategy.</p>
+<p>This is a library to run a faster ICA solver based on L-BFGS combined with a preconditioning strategy.</p>
 <div class="section" id="installation">
 <h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
 <p>We recommend the <a class="reference external" href="https://www.continuum.io/downloads">Anaconda Python distribution</a>. To install <code class="docutils literal"><span class="pre">lbfgsica</span></code>, you first need to install its dependencies:</p>
@@ -147,14 +147,19 @@ with <cite>pip</cite>. To upgrade, use the <code class="docutils literal"><span 
 <div class="highlight-default"><div class="highlight"><pre><span></span>$ python -c &#39;import lbfgsica&#39;
 </pre></div>
 </div>
-<p>and it should not give any error messages.</p>
+<p>and it should not give any error message.</p>
 </div>
 <div class="section" id="quickstart">
 <h2>Quickstart<a class="headerlink" href="#quickstart" title="Permalink to this headline">¶</a></h2>
-<p>The easiest way to get started is to copy the following three lines of code
+<p>The easiest way to get started is to copy the following lines of code
 in your script:</p>
-<div class="code python highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">lbfgsica</span> <span class="k">import</span> <span class="n">run_ica</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">lbfgs_ica</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<div class="code python highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">lbfgsica</span> <span class="k">import</span> <span class="n">lbfgs_ica</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">N</span><span class="p">,</span> <span class="n">T</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1000</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">S</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">laplace</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">T</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">N</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">S</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Y</span><span class="p">,</span> <span class="n">W</span> <span class="o">=</span> <span class="n">lbfgs_ica</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>  
 </pre></div>
 </div>
 </div>

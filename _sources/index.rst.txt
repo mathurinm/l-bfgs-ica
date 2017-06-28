@@ -6,7 +6,7 @@
 L-BFGS ICA
 ==========
 
-This is a library to run a faster ICA solver based on L-BFGS combined a preconditioning strategy.
+This is a library to run a faster ICA solver based on L-BFGS combined with a preconditioning strategy.
 
 Installation
 ------------
@@ -26,18 +26,23 @@ To check if everything worked fine, you can do::
 
 	$ python -c 'import lbfgsica'
 
-and it should not give any error messages.
+and it should not give any error message.
 
 Quickstart
 ----------
 
-The easiest way to get started is to copy the following three lines of code
+The easiest way to get started is to copy the following lines of code
 in your script:
 
 .. code:: python
 
-	>>> from lbfgsica import run_ica
-	>>> lbfgs_ica(...)
+   >>> import numpy as np
+   >>> from lbfgsica import lbfgs_ica
+   >>> N, T = 3, 1000
+   >>> S = np.random.laplace(size=(N, T))
+   >>> A = np.random.randn(N, N)
+   >>> X = np.dot(A, S)
+   >>> Y, W = lbfgs_ica(X)  # doctest:+ELLIPSIS
 
 
 Bug reports
