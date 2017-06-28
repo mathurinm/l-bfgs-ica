@@ -121,48 +121,75 @@
 <h1>lbfgsica.lbfgs_ica<a class="headerlink" href="#lbfgsica-lbfgs-ica" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="lbfgsica.lbfgs_ica">
-<code class="descclassname">lbfgsica.</code><code class="descname">lbfgs_ica</code><span class="sig-paren">(</span><em>X</em>, <em>m=7</em>, <em>maxiter=100</em>, <em>precon=1</em>, <em>tol=1e-07</em>, <em>lambda_min=0.01</em>, <em>ls_tries=5</em>, <em>verbose=False</em><span class="sig-paren">)</span><a class="headerlink" href="#lbfgsica.lbfgs_ica" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">lbfgsica.</code><code class="descname">lbfgs_ica</code><span class="sig-paren">(</span><em>X</em>, <em>m=7</em>, <em>maxiter=1000</em>, <em>precon=1</em>, <em>tol=1e-07</em>, <em>lambda_min=0.01</em>, <em>ls_tries=5</em>, <em>verbose=False</em><span class="sig-paren">)</span><a class="headerlink" href="#lbfgsica.lbfgs_ica" title="Permalink to this definition">¶</a></dt>
 <dd><p>Runs L-BFGS ICA algorithm using preconditioning</p>
 <p>The algorithm is detailed in:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Pierre</span> <span class="n">Ablin</span><span class="p">,</span> <span class="n">Jean</span><span class="o">-</span><span class="n">Francois</span> <span class="n">Cardoso</span><span class="p">,</span> <span class="ow">and</span> <span class="n">Alexandre</span> <span class="n">Gramfort</span>
 <span class="n">Faster</span> <span class="n">ICA</span> <span class="n">by</span> <span class="n">preconditioning</span> <span class="k">with</span> <span class="n">Hessian</span> <span class="n">approximations</span>
 <span class="n">ArXiv</span> <span class="n">Preprint</span><span class="p">,</span> <span class="n">June</span> <span class="mi">2017</span>
+<span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">arxiv</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="nb">abs</span><span class="o">/</span><span class="mf">1706.08171</span>
 </pre></div>
 </div>
-<dl class="docutils">
-<dt>X <span class="classifier-delimiter">:</span> <span class="classifier">array, shape (N, T)</span></dt>
-<dd>Matrix containing the signals that have to be unmixed. N is the
-number of signals, T is the number of samples. X has to be centered</dd>
-<dt>m <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd>Size of L-BFGS’s memory. Typical values for m are in the range 3-15</dd>
-<dt>maxiter <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd>Maximal number of iterations for the algorithm</dd>
-<dt>precon <span class="classifier-delimiter">:</span> <span class="classifier">1 or 2</span></dt>
-<dd>Chooses which Hessian approximation is used as preconditioner.
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>X</strong> : array, shape (N, T)</p>
+<blockquote>
+<div><p>Matrix containing the signals that have to be unmixed. N is the
+number of signals, T is the number of samples. X has to be centered</p>
+</div></blockquote>
+<p><strong>m</strong> : int</p>
+<blockquote>
+<div><p>Size of L-BFGS’s memory. Typical values for m are in the range 3-15</p>
+</div></blockquote>
+<p><strong>maxiter</strong> : int</p>
+<blockquote>
+<div><p>Maximal number of iterations for the algorithm</p>
+</div></blockquote>
+<p><strong>precon</strong> : 1 or 2</p>
+<blockquote>
+<div><p>Chooses which Hessian approximation is used as preconditioner.
 1 -&gt; H1
 2 -&gt; H2
 H2 is more costly to compute but can greatly accelerate convergence
-(See the paper for details).</dd>
-<dt>tol <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
-<dd>tolerance for the stopping criterion. Iterations stop when the norm
-of the gradient gets smaller than tol.</dd>
-<dt>lambda_min <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
-<dd>Constant used to regularize the Hessian approximations. The
+(See the paper for details).</p>
+</div></blockquote>
+<p><strong>tol</strong> : float</p>
+<blockquote>
+<div><p>tolerance for the stopping criterion. Iterations stop when the norm
+of the gradient gets smaller than tol.</p>
+</div></blockquote>
+<p><strong>lambda_min</strong> : float</p>
+<blockquote>
+<div><p>Constant used to regularize the Hessian approximations. The
 eigenvalues of the approximation that are below lambda_min are
-shifted to lambda_min.</dd>
-<dt>ls_tries <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd>Number of tries allowed for the backtracking line-search. When that
+shifted to lambda_min.</p>
+</div></blockquote>
+<p><strong>ls_tries</strong> : int</p>
+<blockquote>
+<div><p>Number of tries allowed for the backtracking line-search. When that
 number is exceeded, the direction is thrown away and the gradient
-is used instead.</dd>
-<dt>verbose <span class="classifier-delimiter">:</span> <span class="classifier">boolean</span></dt>
-<dd>If true, prints the informations about the algorithm.</dd>
-</dl>
-<dl class="docutils">
-<dt>Y <span class="classifier-delimiter">:</span> <span class="classifier">array, shape (N, T)</span></dt>
-<dd>The estimated source matrix</dd>
-<dt>W <span class="classifier-delimiter">:</span> <span class="classifier">array, shape (N, N)</span></dt>
-<dd>The estimated unmixing matrix, such that Y = WX.</dd>
-</dl>
+is used instead.</p>
+</div></blockquote>
+<p><strong>verbose</strong> : boolean</p>
+<blockquote>
+<div><p>If true, prints the informations about the algorithm.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>Y</strong> : array, shape (N, T)</p>
+<blockquote>
+<div><p>The estimated source matrix</p>
+</div></blockquote>
+<p><strong>W</strong> : array, shape (N, N)</p>
+<blockquote class="last">
+<div><p>The estimated unmixing matrix, such that Y = WX.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 </div>

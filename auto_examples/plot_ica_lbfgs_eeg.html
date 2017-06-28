@@ -71,7 +71,10 @@
      href="../index.html">Site <b class="caret"></b></a>
   <ul class="dropdown-menu globaltoc"
       role="menu"
-      aria-labelledby="dLabelGlobalToc"></ul>
+      aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="../api.html">API Documentation</a></li>
+</ul>
+</ul>
 </li>
               
                 <li class="dropdown">
@@ -125,7 +128,7 @@
 <span class="kn">from</span> <span class="nn">mne.datasets</span> <span class="kn">import</span> <span class="n">sample</span>
 <span class="kn">from</span> <span class="nn">sklearn.decomposition</span> <span class="kn">import</span> <span class="n">PCA</span>
 
-<span class="kn">from</span> <span class="nn">lbfgsica</span> <span class="kn">import</span> <span class="n">lbfgs_ica</span>
+<span class="kn">from</span> <span class="nn">lbfgsica</span> <span class="kn">import</span> <a href="http://pierreablin.github.io/l-bfgs-ica/generated/lbfgsica.lbfgs_ica.html#lbfgsica.lbfgs_ica" title="View documentation for lbfgsica.lbfgs_ica"><span class="n">lbfgs_ica</span></a>
 
 <span class="k">print</span><span class="p">(</span><span class="vm">__doc__</span><span class="p">)</span>
 </pre></div>
@@ -157,7 +160,7 @@
 
 <span class="c1"># Run ICA on X</span>
 
-<span class="n">Y</span><span class="p">,</span> <span class="n">W</span> <span class="o">=</span> <span class="n">lbfgs_ica</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">maxiter</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>
+<span class="n">Y</span><span class="p">,</span> <span class="n">W</span> <span class="o">=</span> <a href="http://pierreablin.github.io/l-bfgs-ica/generated/lbfgsica.lbfgs_ica.html#lbfgsica.lbfgs_ica" title="View documentation for lbfgsica.lbfgs_ica"><span class="n">lbfgs_ica</span></a><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">maxiter</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
@@ -183,7 +186,7 @@
 </pre></div>
 </div>
 <img alt="../_images/sphx_glr_plot_ica_lbfgs_eeg_001.png" class="align-center" src="../_images/sphx_glr_plot_ica_lbfgs_eeg_001.png" />
-<p><strong>Total running time of the script:</strong> ( 0 minutes  8.954 seconds)</p>
+<p><strong>Total running time of the script:</strong> ( 0 minutes  9.364 seconds)</p>
 <div class="sphx-glr-footer docutils container">
 <div class="sphx-glr-download docutils container">
 <a class="reference download internal" href="../_downloads/plot_ica_lbfgs_eeg.py" download=""><code class="xref download docutils literal"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_ica_lbfgs_eeg.py</span></code></a></div>

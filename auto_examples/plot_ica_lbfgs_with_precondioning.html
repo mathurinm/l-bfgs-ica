@@ -71,7 +71,10 @@
      href="../index.html">Site <b class="caret"></b></a>
   <ul class="dropdown-menu globaltoc"
       role="menu"
-      aria-labelledby="dLabelGlobalToc"></ul>
+      aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="../api.html">API Documentation</a></li>
+</ul>
+</ul>
 </li>
               
                 <li class="dropdown">
@@ -122,7 +125,7 @@
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
 
-<span class="kn">from</span> <span class="nn">lbfgsica</span> <span class="kn">import</span> <span class="n">lbfgs_ica</span>
+<span class="kn">from</span> <span class="nn">lbfgsica</span> <span class="kn">import</span> <a href="http://pierreablin.github.io/l-bfgs-ica/generated/lbfgsica.lbfgs_ica.html#lbfgsica.lbfgs_ica" title="View documentation for lbfgsica.lbfgs_ica"><span class="n">lbfgs_ica</span></a>
 
 <span class="k">print</span><span class="p">(</span><span class="vm">__doc__</span><span class="p">)</span>
 </pre></div>
@@ -144,7 +147,7 @@
 <span class="n">X</span> <span class="o">=</span> <a href="http://docs.scipy.org/doc/numpy-1.9.1/reference/generated/numpy.dot.html#numpy.dot" title="View documentation for numpy.dot"><span class="n">np</span><span class="o">.</span><span class="n">dot</span></a><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">S</span><span class="p">)</span>  <span class="c1"># Generate observations</span>
 
 <span class="c1"># Compute ICA</span>
-<span class="n">Y</span><span class="p">,</span> <span class="n">W</span> <span class="o">=</span> <span class="n">lbfgs_ica</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+<span class="n">Y</span><span class="p">,</span> <span class="n">W</span> <span class="o">=</span> <a href="http://pierreablin.github.io/l-bfgs-ica/generated/lbfgsica.lbfgs_ica.html#lbfgsica.lbfgs_ica" title="View documentation for lbfgsica.lbfgs_ica"><span class="n">lbfgs_ica</span></a><span class="p">(</span><span class="n">X</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Plot results</p>
@@ -171,7 +174,7 @@
 <li><a class="first reference internal image-reference" href="../_images/sphx_glr_plot_ica_lbfgs_with_precondioning_003.png"><img alt="../_images/sphx_glr_plot_ica_lbfgs_with_precondioning_003.png" src="../_images/sphx_glr_plot_ica_lbfgs_with_precondioning_003.png" style="width: 282.0px; height: 188.0px;" /></a>
 </li>
 </ul>
-<p><strong>Total running time of the script:</strong> ( 0 minutes  0.630 seconds)</p>
+<p><strong>Total running time of the script:</strong> ( 0 minutes  0.444 seconds)</p>
 <div class="sphx-glr-footer docutils container">
 <div class="sphx-glr-download docutils container">
 <a class="reference download internal" href="../_downloads/plot_ica_lbfgs_with_precondioning.py" download=""><code class="xref download docutils literal"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_ica_lbfgs_with_precondioning.py</span></code></a></div>
